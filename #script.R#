@@ -1,0 +1,12 @@
+r =  raster("./covs_1km_Africa/MERIT_100m.tif")
+
+train = build_full(
+    load_training("./Data/",projection(r))
+    )
+
+validation <- build_full(load_validation("./Data/",projection(train)))
+
+
+k2 = mkrig_predictor(train)
+
+pred = k2(validation)

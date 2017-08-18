@@ -1,0 +1,7 @@
+
+pp = compare_predictors(train, .5, 100, list(gam=gam_predictor, duff=duff_predictor, mean=mean_predictor, krig=krig_predictor))
+
+pp1 = compare_predictors(train, .85, 100, 
+    list(gam=gam_predictor, krig=krig_predictor,))
+
+ggplot(pp1, aes(x=v)) + geom_histogram() + facet_wrap(~name,ncol=1)
